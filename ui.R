@@ -15,14 +15,14 @@ ui = fluidPage(
     tabPanel("Beer By State, Options",
       sidebarLayout(
         sidebarPanel(
-          titlePanel("Beer Options"),
+          titlePanel("Select State to Plot Its Breweries"),
           selectInput("state",
-                      label = "State",
+                      label = "",
                       choices = levels(state_data),
                       selected = "California"),
-          
+          titlePanel("Filter Options for Data Table"),
           selectInput("city",
-                      label = "city",
+                      label = "City",
                       choices = city_data,
                       selected = "Los Angeles"),
           
@@ -30,7 +30,7 @@ ui = fluidPage(
                       min=0, max=20000, value=500),
           
           # Specification of ABV range within an interval
-          sliderInput("range", "Range:",
+          sliderInput("range", "ABV % Range:",
                       min = 0, max = 57, value = c(4,10)),
           actionButton(inputId = "button_state", label = "Update Chart")
           ),

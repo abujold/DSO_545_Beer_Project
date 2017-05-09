@@ -162,7 +162,7 @@ function(input, output) {
           geom_point(stat = "identity", size = 2) +
           coord_flip() +
           xlab("Beer") +
-          ylab("Avg. Rating") + 
+          ylab("Adj. Rating") + 
           labs(color= "Style")
       })
     })
